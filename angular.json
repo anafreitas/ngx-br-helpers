@@ -29,12 +29,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -115,6 +113,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngx-br-masks": {
+      "root": "projects/ngx-br-masks",
+      "sourceRoot": "projects/ngx-br-masks/src",
+      "projectType": "library",
+      "prefix": "br",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-br-masks/tsconfig.lib.json",
+            "project": "projects/ngx-br-masks/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-br-masks/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-br-masks/src/test.ts",
+            "tsConfig": "projects/ngx-br-masks/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-br-masks/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-br-masks/tsconfig.lib.json",
+              "projects/ngx-br-masks/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

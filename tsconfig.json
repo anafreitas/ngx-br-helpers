@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-br-masks": [
+        "dist/ngx-br-masks"
+      ],
+      "ngx-br-masks/*": [
+        "dist/ngx-br-masks/*"
+      ]
+    }
   }
 }
