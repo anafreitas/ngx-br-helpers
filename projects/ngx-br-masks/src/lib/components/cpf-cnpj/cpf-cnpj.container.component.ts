@@ -7,7 +7,7 @@ import { FormControl } from "@angular/forms";
     <ng-content></ng-content>
     <span *ngIf="shouldShowErrors()" style="color: #f05050">
       <span *ngIf="control.hasError('required')">{{requiredMsg}}</span>
-      <span *ngIf="!control.hasError('required') && control.hasError('cpf')">{{cpfMsg}}</span>
+      <span *ngIf="!control.hasError('required') && control.hasError('cpf')">{{cpfCnpjMsg}}</span>
     </span>
   `
 })

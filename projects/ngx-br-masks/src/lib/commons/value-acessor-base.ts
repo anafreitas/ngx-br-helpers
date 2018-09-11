@@ -1,6 +1,7 @@
 import { ControlValueAccessor } from "@angular/forms";
 import { Input } from "@angular/core";
 
+declare var require: any;
 const vanillaMasker = require("vanilla-masker");
 
 export abstract class ValueAccessorBase<T> implements ControlValueAccessor {

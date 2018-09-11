@@ -26,6 +26,8 @@ export class CpfCnpjComponent extends ValueAccessorBase<string> {
   placeholder: string = cpfPattern;
   @Input()
   id: string;
+  @Input()
+  disabled: boolean;
   @Output()
   blur: EventEmitter<any> = new EventEmitter();
 
@@ -39,7 +41,7 @@ export class CpfCnpjComponent extends ValueAccessorBase<string> {
   }
 
   public pattern = (value: any): string => {
-    return value.toString().length < 11 ? cnpjPattern : cpfPattern;
+    return value.toString().length > 11 ? cnpjPattern : cpfPattern;
   };
 
   public blurEvt(event): void {

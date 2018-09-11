@@ -2,6 +2,7 @@ import { cnpjPattern, cpfPattern } from "./../../commons/constants";
 import { Directive, ElementRef, HostListener } from "@angular/core";
 import { removeNonDigitValues } from "../../commons/utils";
 
+declare var require: any;
 const vanillaMasker = require("vanilla-masker");
 
 @Directive({
@@ -17,7 +18,7 @@ export class CpfCnpjMaskDirective {
   @HostListener("keyup", ["$event"])
   onKeyup(event: KeyboardEvent) {
     const telefonePattern: string =
-      removeNonDigitValues(this.nativeElement.value).length < 11
+      removeNonDigitValues(this.nativeElement.value).length > 11
         ? cnpjPattern
         : cpfPattern;
     this.nativeElement.value = vanillaMasker.toPattern(

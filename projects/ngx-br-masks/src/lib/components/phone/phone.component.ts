@@ -26,7 +26,8 @@ export class PhoneComponent extends ValueAccessorBase<string> {
   placeholder: string = phonePattern;
   @Input()
   id: string;
-
+  @Input()
+  disabled: boolean;
   @Output()
   blur: EventEmitter<any> = new EventEmitter();
 

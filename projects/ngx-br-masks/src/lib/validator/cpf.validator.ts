@@ -1,5 +1,6 @@
 import { AbstractControl, ValidatorFn } from "@angular/forms";
 
+declare var require: any;
 const CPF = require("cpf_cnpj").CPF;
 
 export function cpfValidationFn(): ValidatorFn {

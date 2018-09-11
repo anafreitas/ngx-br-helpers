@@ -28,7 +28,8 @@ export class CnpjComponent extends ValueAccessorBase<string> {
   placeholder: string = cnpjPlaceholder;
   @Input()
   id: string;
-
+  @Input()
+  disabled: boolean;
   @Output()
   blur: EventEmitter<any> = new EventEmitter();
 

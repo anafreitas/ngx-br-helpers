@@ -5,7 +5,7 @@ import { cnpjValidationFn } from "./cnpj.validator";
 export * from "./cpf.validator";
 export * from "./cnpj.validator";
 
-export class NgxBrValidators {
+export class Validators {
   static cpf: (
     blockEqualNumberSequence?: boolean
   ) => ValidatorFn = cpfValidationFn;

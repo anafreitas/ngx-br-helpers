@@ -28,6 +28,8 @@ export class CepComponent extends ValueAccessorBase<string> {
   id: string;
   @Input()
   placeholder: string = cepPlaceholder;
+  @Input()
+  disabled: boolean;
   @Output()
   blur: EventEmitter<any> = new EventEmitter();
 

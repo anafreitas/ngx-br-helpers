@@ -1,6 +1,7 @@
 import { Directive, ElementRef } from "@angular/core";
 import { cepPattern } from "../../commons/constants";
 
+declare var require: any;
 const vanillaMasker = require("vanilla-masker");
 
 @Directive({

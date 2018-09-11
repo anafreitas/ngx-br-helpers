@@ -5,3 +5,4 @@
 export * from "./lib/ngx-br-masks.service";
 export * from "./lib/ngx-br-masks.component";
 export * from "./lib/ngx-br-masks.module";
+export * from "./lib/validator/validator";

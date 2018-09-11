@@ -2,6 +2,7 @@ import { Directive, ElementRef, HostListener } from "@angular/core";
 import { removeNonDigitValues } from "../../commons/utils";
 import { phonePattern, celPattern } from "../../commons/constants";
 
+declare var require: any;
 const vanillaMasker = require("vanilla-masker");
 
 @Directive({
@@ -18,8 +19,8 @@ export class PhoneMaskDirective {
   onKeyup(event: KeyboardEvent) {
     const telefonePattern: string =
       removeNonDigitValues(this.nativeElement.value).length === 11
-        ? phonePattern
-        : celPattern;
+        ? celPattern
+        : phonePattern;
     this.nativeElement.value = vanillaMasker.toPattern(
       this.nativeElement.value,
       telefonePattern

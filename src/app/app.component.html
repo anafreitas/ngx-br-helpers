@@ -1,20 +1,102 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<form class="container" [formGroup]="form">
+  <div class="row">
+    <div class="col-md-7 form-group">
 
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <h3>CPF Component</h3>
+          <p>Text input with a CPF mask.</p>
+        </div>
+      </div>
+      <div class="row example-box">
+        <div class="col-md-6 form-group">
+          <label>EXAMPLE</label>
+          <br-cpf-container [control]="form.get('cpf')">
+            <br-cpf formControlName="cpf" [(ngModel)]="model.cpf"></br-cpf>
+          </br-cpf-container>
+        </div>
+        <div class="col-md-6">
+          <label>DISABLED</label>
+          <br-cpf formControlName="cpfDisabled" [(ngModel)]="model.cpfDisabled"></br-cpf>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <h3>CNPJ Component</h3>
+          <p>Text input with a CNPJ mask.</p>
+        </div>
+      </div>
+      <div class="row example-box">
+        <div class="col-md-6 form-group">
+          <label>EXAMPLE</label>
+          <br-cnpj-container [control]="form.get('cnpj')">
+            <br-cnpj [(ngModel)]="model.cnpj" formControlName="cnpj"></br-cnpj>
+          </br-cnpj-container>
+        </div>
+        <div class="col-md-6">
+          <label>DISABLED</label>
+          <br-cnpj [(ngModel)]="model.cnpjDisabled" formControlName="cnpjDisabled"></br-cnpj>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <h3>CPF/CNPJ Component</h3>
+          <p>Text input with a CNPJ mask.</p>
+        </div>
+      </div>
+      <div class="row example-box">
+        <div class="col-md-6 form-group">
+          <label>EXAMPLE</label>
+          <br-cpf-cnpj-container [control]="form.get('cnpj')">
+            <br-cpf-cnpj [(ngModel)]="model.cnpj" formControlName="cnpj"></br-cpf-cnpj>
+          </br-cpf-cnpj-container>
+          <p>{{model.cnpj}}</p>
+        </div>
+        <div class="col-md-6">
+          <label>DISABLED</label>
+          <br-cpf-cnpj [(ngModel)]="model.cnpjDisabled" formControlName="cnpjDisabled"></br-cpf-cnpj>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <h3>TELEFONE Component</h3>
+          <p>Text input with a Phone mask.</p>
+          <p><strong>Pipe: </strong>{{model.telefone | phone}}</p>
+        </div>
+      </div>
+      <div class="row example-box">
+        <div class="col-md-6 form-group">
+          <label>EXAMPLE</label>
+          <br-phone [(ngModel)]="model.telefone" formControlName="telefone"></br-phone>
+        </div>
+        <div class="col-md-6">
+          <label>DISABLED</label>
+          <br-phone [disabled]="true"></br-phone>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <h3>CEP Component</h3>
+          <p>Text input with a Cep mask.</p>
+          <p><strong>Pipe: </strong>{{model.cep | cep}}</p>
+        </div>
+      </div>
+      <div class="row example-box">
+        <div class="col-md-6 form-group">
+          <label>EXAMPLE</label>
+          <br-cep [(ngModel)]="model.cep" formControlName="cep"></br-cep>
+        </div>
+        <div class="col-md-6">
+          <label>DISABLED</label>
+          <br-cep [disabled]="true"></br-cep>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</form>

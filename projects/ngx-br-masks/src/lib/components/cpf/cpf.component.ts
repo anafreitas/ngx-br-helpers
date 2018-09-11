@@ -28,7 +28,8 @@ export class CpfComponent extends ValueAccessorBase<string> {
   placeholder: string = cpfPlaceholder;
   @Input()
   id: string;
-
+  @Input()
+  disabled: boolean;
   @Output()
   blur: EventEmitter<any> = new EventEmitter();
 
