@@ -1,13 +1,14 @@
 {
   "name": "ngx-br-helpers",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lib": "ng build --prod ngx-br-masks"
   },
   "private": false,
   "dependencies": {
